@@ -248,7 +248,7 @@ export default function Infografis() {
             INFOGRAFIS
           </h1>
           <h2 className="text-2xl md:text-3xl font-bold text-secondary uppercase opacity-80">
-            DESA DUMBAYA BULAN
+            DESA DUMBAYABULAN
           </h2>
         </div>
 
@@ -290,10 +290,10 @@ export default function Infografis() {
                 <span className="text-xs font-bold uppercase tracking-wider">Data Terverifikasi</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-extrabold text-primary leading-tight">
-                Demografi Penduduk Desa Dumbaya Bulan
+                Demografi Penduduk Desa Dumbayabulan
               </h2>
               <p className="text-on-surface-variant text-base md:text-lg leading-relaxed">
-                Visualisasi data kependudukan komprehensif yang mencakup komposisi usia, tingkat pendidikan, mata pencaharian, dan distribusi wilayah. Instrumen penting dalam perencanaan pembangunan desa yang inklusif dan tepat sasaran di Desa Dumbaya Bulan.
+                Visualisasi data kependudukan komprehensif yang mencakup komposisi usia, tingkat pendidikan, mata pencaharian, dan distribusi wilayah. Instrumen penting dalam perencanaan pembangunan desa yang inklusif dan tepat sasaran di Desa Dumbayabulan.
               </p>
             </div>
             
@@ -405,7 +405,7 @@ export default function Infografis() {
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
                   <h3 className="text-xl font-bold text-primary">
-                    Piramida Penduduk Desa Dumbaya Bulan
+                    Piramida Penduduk Desa Dumbayabulan
                   </h3>
                   <p className="text-sm text-on-surface-variant">Distribusi usia berdasarkan jenis kelamin</p>
                 </div>
@@ -482,7 +482,7 @@ export default function Infografis() {
               <div className="p-5 bg-surface rounded-xl border-l-4 border-primary flex items-start gap-4 shadow-sm">
                 <span className="material-symbols-outlined text-primary text-xl">info</span>
                 <p className="text-sm text-on-surface-variant leading-relaxed">
-                  Kelompok umur anak-anak (<span className="font-bold text-primary">0-5 tahun</span>) mendominasi demografi Desa Dumbaya Bulan dengan kontribusi sebesar <span className="font-bold text-primary">15.56%</span> dari total populasi.
+                  Kelompok umur anak-anak (<span className="font-bold text-primary">0-5 tahun</span>) mendominasi demografi Desa Dumbayabulan dengan kontribusi sebesar <span className="font-bold text-primary">15.56%</span> dari total populasi.
                 </p>
               </div>
             </div>
@@ -490,7 +490,7 @@ export default function Infografis() {
             {/* Dusun Pie Chart */}
             <div className="lg:col-span-5 bg-surface-container-lowest p-6 md:p-8 rounded-xl border border-outline-variant/30 shadow-sm flex flex-col justify-between">
               <h3 className="text-lg font-bold text-primary mb-6">
-                Distribusi Dusun Desa Dumbaya Bulan
+                Distribusi Dusun Desa Dumbayabulan
               </h3>
               <div className="flex-grow flex flex-col items-center justify-center gap-8">
                 <div 
@@ -545,7 +545,7 @@ export default function Infografis() {
             {/* Pendidikan Bar Chart */}
             <div className="lg:col-span-7 bg-surface-container-lowest p-6 md:p-8 rounded-xl border border-outline-variant/30 shadow-sm flex flex-col justify-between">
               <h3 className="text-lg font-bold text-primary mb-8">
-                Tingkat Pendidikan Desa Dumbaya Bulan
+                Tingkat Pendidikan Desa Dumbayabulan
               </h3>
               
               <div className="flex items-end justify-between h-64 gap-3 pb-2">
@@ -587,7 +587,7 @@ export default function Infografis() {
           <section className="space-y-6">
             <div className="flex items-center justify-between">
               <h3 className="text-2xl font-bold text-primary">
-                Mata Pencaharian Desa Dumbaya Bulan
+                Mata Pencaharian Desa Dumbayabulan
               </h3>
               <span className="text-xs font-bold text-on-surface-variant bg-surface-container-high px-4 py-1.5 rounded-full uppercase tracking-wider">
                 Top 6 Kategori
@@ -624,7 +624,7 @@ export default function Infografis() {
           {/* Agama Section */}
           <section className="space-y-6">
             <h3 className="text-2xl font-bold text-primary">
-              Data Keagamaan Desa Dumbaya Bulan
+              Data Keagamaan Desa Dumbayabulan
             </h3>
             
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -664,7 +664,7 @@ export default function Infografis() {
               <div className="flex items-center gap-2">
                 <span className="w-8 h-1 bg-secondary rounded-full"></span>
                 <h4 className="text-2xl md:text-3xl font-extrabold text-secondary">
-                  APB Desa Dumbaya Bulan
+                  APB Desa Dumbayabulan
                 </h4>
               </div>
               <p className="text-on-surface-variant text-sm md:text-base max-w-2xl leading-relaxed">
@@ -826,7 +826,7 @@ export default function Infografis() {
                   </div>
                   <div>
                     <h4 className="text-xl md:text-2xl font-bold">Pemantauan & Intervensi Stunting</h4>
-                    <p className="text-xs text-white/60">Data tumbuh kembang balita Desa Dumbaya Bulan</p>
+                    <p className="text-xs text-white/60">Data tumbuh kembang balita Desa Dumbayabulan</p>
                   </div>
                 </div>
                 {/* Year Selector */}
@@ -1065,13 +1065,13 @@ export default function Infografis() {
                   <span className="material-symbols-outlined text-primary-fixed text-4xl">badge</span>
                 </div>
                 <div>
-                  <h4 className="text-2xl md:text-3xl font-black">Infografis Bansos Desa Dumbaya Bulan</h4>
+                  <h4 className="text-2xl md:text-3xl font-black">Infografis Bansos Desa Dumbayabulan</h4>
                   <p className="text-xs text-white/60 font-medium">Data Penerima Bantuan Sosial</p>
                 </div>
               </div>
               
               <p className="text-sm text-white/80 leading-relaxed max-w-xl">
-                Ringkasan jumlah Keluarga Penerima Manfaat (KPM) yang terdaftar dalam program bantuan sosial di Desa Dumbaya Bulan. Data diperbarui secara berkala oleh Pemerintah Desa.
+                Ringkasan jumlah Keluarga Penerima Manfaat (KPM) yang terdaftar dalam program bantuan sosial di Desa Dumbayabulan. Data diperbarui secara berkala oleh Pemerintah Desa.
               </p>
 
               {/* KPM Stats Grid */}

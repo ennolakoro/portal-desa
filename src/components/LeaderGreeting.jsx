@@ -40,7 +40,7 @@ export default function LeaderGreeting() {
             <span className="material-symbols-outlined text-sm">chat_bubble</span> SAMBUTAN HANGAT
           </div>
           <h3 className="text-primary font-semibold text-3xl mb-2 tracking-tight">
-            Pesan Kepala Desa Desa Dumbaya Bulan
+            Pesan Kepala Desa Desa Dumbayabulan
           </h3>
           <h4 className="text-secondary font-semibold text-xl mb-8">{greeting.name || 'Kepala Desa'}</h4>
           <div className="relative">

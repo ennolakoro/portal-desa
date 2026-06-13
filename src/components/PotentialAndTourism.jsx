@@ -45,7 +45,7 @@ export default function PotentialAndTourism() {
             <h2 className="text-primary font-bold text-3xl tracking-tight">Potensi Desa</h2>
           </div>
           <p className="text-on-surface-variant text-lg mb-8 leading-relaxed">
-            Desa Dumbaya Bulan dianugerahi kekayaan alam melimpah serta kreativitas masyarakat yang luar biasa dalam memajukan perekonomian desa.
+            Desa Dumbayabulan dianugerahi kekayaan alam melimpah serta kreativitas masyarakat yang luar biasa dalam memajukan perekonomian desa.
           </p>
 
           {potensiItems.length === 0 ? (

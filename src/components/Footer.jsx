@@ -38,7 +38,7 @@ export default function Footer() {
                     account_balance
                   </span>
                 </div>
-                <span className="text-2xl font-bold">Desa Dumbaya Bulan</span>
+                <span className="text-2xl font-bold">Desa Dumbayabulan</span>
               </div>
               <div className="text-on-primary/70 space-y-4 leading-relaxed">
                 <p>{settings.footer_alamat_kantor}</p>
@@ -143,7 +143,7 @@ export default function Footer() {
         <div className="border-t border-white/10 bg-black/20">
           <div className="max-w-[1280px] mx-auto px-4 md:px-10 py-8 flex flex-col md:flex-row justify-between items-center gap-6">
             <p className="text-on-primary/50 text-xs font-medium">
-              © 2026 Pemerintah Desa Dumbaya Bulan. Powered by Desa Dumbaya Bulan
+              © 2026 Pemerintah Desa Dumbayabulan. Powered by Desa Dumbayabulan
             </p>
             <div className="flex gap-4">
               <button className="bg-white/5 hover:bg-white/10 px-6 py-2.5 rounded-full text-white text-xs font-bold flex items-center gap-2 border border-white/10 transition-all cursor-pointer">

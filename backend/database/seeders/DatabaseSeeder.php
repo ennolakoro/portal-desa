@@ -26,14 +26,14 @@ class DatabaseSeeder extends Seeder
         // Default Profil Desa
         \App\Models\ProfilDesa::create([
             'id' => 1,
-            'visi' => '"Terwujudnya Desa Dumbaya Bulan yang Mandiri, Sejahtera, dan Berkeadilan melalui Tata Kelola Pemerintahan yang Transparan dan Partisipatif."',
+            'visi' => '"Terwujudnya Desa Dumbayabulan yang Mandiri, Sejahtera, dan Berkeadilan melalui Tata Kelola Pemerintahan yang Transparan dan Partisipatif."',
             'misi' => json_encode([
                 'Meningkatkan kualitas pelayanan publik berbasis teknologi informasi untuk kemudahan akses warga.',
                 'Mendorong pemberdayaan ekonomi masyarakat melalui optimalisasi potensi desa dan UMKM lokal.',
                 'Mewujudkan pembangunan infrastruktur yang merata dan berkelanjutan dengan menjaga kelestarian alam.',
                 'Memperkuat nilai-nilai religius dan budaya lokal dalam kehidupan bermasyarakat sehari-hari.'
             ]),
-            'sejarah' => 'Sejarah adalah fondasi masa depan. Kami sedang mengumpulkan kepingan cerita dari para tetua dan arsip untuk mendokumentasikan perjalanan Desa Dumbaya Bulan secara akurat dan komprehensif.',
+            'sejarah' => 'Sejarah adalah fondasi masa depan. Kami sedang mengumpulkan kepingan cerita dari para tetua dan arsip untuk mendokumentasikan perjalanan Desa Dumbayabulan secara akurat dan komprehensif.',
             'batas_utara' => 'Desa Tolotio',
             'batas_timur' => 'Desa Poowo',
             'batas_selatan' => 'Teluk Tomini',
@@ -43,13 +43,13 @@ class DatabaseSeeder extends Seeder
             'map_lat' => 0.51488,
             'map_lng' => 123.2243,
             'map_zoom' => 14,
-            'map_geojson' => '{"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Batas Desa Dumbaya Bulan"},"geometry":{"type":"Polygon","coordinates":[[[123.215,0.525],[123.228,0.528],[123.238,0.520],[123.232,0.505],[123.218,0.502],[123.210,0.512],[123.215,0.525]]]}}]}'
+            'map_geojson' => '{"type":"FeatureCollection","features":[{"type":"Feature","properties":{"name":"Batas Desa Dumbayabulan"},"geometry":{"type":"Polygon","coordinates":[[[123.215,0.525],[123.228,0.528],[123.238,0.520],[123.232,0.505],[123.218,0.502],[123.210,0.512],[123.215,0.525]]]}}]}'
         ]);
 
         // Default Settings
         \App\Models\DesaSetting::create([
-            'hero_title' => 'Portal Resmi Transformasi Digital Desa Dumbaya Bulan',
-            'hero_tagline' => 'Pusat informasi pemerintahan terpadu, layanan publik modern, dan eksplorasi potensi lokal untuk kesejahteraan warga Desa Dumbaya Bulan, Kabupaten Bone Bolango.',
+            'hero_title' => 'Portal Resmi Transformasi Digital Desa Dumbayabulan',
+            'hero_tagline' => 'Pusat informasi pemerintahan terpadu, layanan publik modern, dan eksplorasi potensi lokal untuk kesejahteraan warga Desa Dumbayabulan, Kabupaten Bone Bolango.',
             'footer_alamat_kantor' => '[Alamat kantor]',
             'footer_detail_alamat' => 'Kecamatan Kabila Bone, Kabupaten Bone Bolango, Provinsi Gorontalo, 96553',
             'footer_kode_wilayah' => '75.03.08.2003',
@@ -323,7 +323,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\PotensiWisata::create([
             'type' => 'potensi',
             'title' => 'Sektor Kelautan & Perikanan',
-            'description' => 'Hasil perikanan laut yang melimpah seperti tongkol dan cakalang menjadi penopang ekonomi utama warga pesisir Desa Dumbaya Bulan.',
+            'description' => 'Hasil perikanan laut yang melimpah seperti tongkol dan cakalang menjadi penopang ekonomi utama warga pesisir Desa Dumbayabulan.',
             'icon' => 'sailing'
         ]);
         \App\Models\PotensiWisata::create([

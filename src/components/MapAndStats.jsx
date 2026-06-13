@@ -57,7 +57,7 @@ export default function MapAndStats({ setCurrentPage }) {
           <div>
             <h2 className="text-primary font-semibold text-3xl mb-2 tracking-tight">Peta Wilayah</h2>
             <p className="text-on-surface-variant text-base">
-              Distribusi Point of Interest Desa Dumbaya Bulan
+              Distribusi Point of Interest Desa Dumbayabulan
             </p>
           </div>
           <button

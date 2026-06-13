@@ -67,7 +67,7 @@ export default function ProfilDesa() {
                 Visi
               </span>
               <p className="text-2xl md:text-4xl text-primary leading-tight max-w-4xl mx-auto italic font-extrabold text-slate-800 dark:text-white">
-                {profileData?.visi || '"Terwujudnya Desa Dumbaya Bulan yang Mandiri, Sejahtera, dan Berkeadilan melalui Tata Kelola Pemerintahan yang Transparan dan Partisipatif."'}
+                {profileData?.visi || '"Terwujudnya Desa Dumbayabulan yang Mandiri, Sejahtera, dan Berkeadilan melalui Tata Kelola Pemerintahan yang Transparan dan Partisipatif."'}
               </p>
             </div>
 
@@ -108,7 +108,7 @@ export default function ProfilDesa() {
               <div>
                 <h2 className="text-3xl font-bold text-primary">Struktur Organisasi</h2>
                 <p className="text-on-surface-variant text-base">
-                  Sistem Tata Kerja Pemerintahan dan Lembaga Desa Dumbaya Bulan
+                  Sistem Tata Kerja Pemerintahan dan Lembaga Desa Dumbayabulan
                 </p>
               </div>
               <div className="flex gap-2">
@@ -194,13 +194,13 @@ export default function ProfilDesa() {
               <div className="space-y-6">
                 <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-fixed/30 text-primary font-bold text-xs uppercase tracking-wider">
                   <span className="material-symbols-outlined text-base">history_edu</span>
-                  <span>Profil Desa Dumbaya Bulan</span>
+                  <span>Profil Desa Dumbayabulan</span>
                 </div>
                 <h2 className="text-3xl md:text-5xl text-primary font-extrabold leading-tight">
                   Mengenal Lebih Dekat Kondisi Geografis dan Potensi Desa Kami
                 </h2>
                 <p className="text-on-surface-variant text-lg leading-relaxed">
-                  {profileData?.sejarah || 'Sejarah adalah fondasi masa depan. Kami sedang mengumpulkan kepingan cerita dari para tetua dan arsip untuk mendokumentasikan perjalanan Desa Dumbaya Bulan secara akurat dan komprehensif.'}
+                  {profileData?.sejarah || 'Sejarah adalah fondasi masa depan. Kami sedang mengumpulkan kepingan cerita dari para tetua dan arsip untuk mendokumentasikan perjalanan Desa Dumbayabulan secara akurat dan komprehensif.'}
                 </p>
                 <div className="flex flex-wrap gap-4 pt-4">
                   <button className="px-8 py-4 bg-primary text-on-primary rounded-xl font-bold text-sm hover:bg-primary-container transition-all shadow-lg hover:-translate-y-1 cursor-pointer">

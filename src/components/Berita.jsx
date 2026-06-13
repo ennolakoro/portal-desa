@@ -29,11 +29,11 @@ export default function Berita({ setCurrentPage, setSelectedNewsId }) {
       {/* Page Header */}
       <div className="mb-12 md:mb-16">
         <h1 className="text-3xl md:text-[48px] md:leading-[56px] font-bold text-primary mb-4 tracking-tight">
-          Semua Berita Desa Dumbaya Bulan
+          Semua Berita Desa Dumbayabulan
         </h1>
         <p className="text-base md:text-lg text-on-surface-variant max-w-3xl leading-relaxed">
           Dapatkan informasi terbaru mengenai kegiatan, pengumuman resmi, dan perkembangan
-          pembangunan di lingkungan Desa Dumbaya Bulan secara transparan dan akuntabel.
+          pembangunan di lingkungan Desa Dumbayabulan secara transparan dan akuntabel.
         </p>
       </div>
 

@@ -105,7 +105,7 @@ export default function KelolaApbdesForm({ token }) {
     <div className="space-y-6 animate-fade-in max-w-6xl mx-auto">
       <div>
         <h2 className="text-2xl font-extrabold text-primary">Kelola Anggaran Desa (APBDes)</h2>
-        <p className="text-sm text-on-surface-variant">Update target dan realisasi APBDes Desa Dumbaya Bulan per Tahun Anggaran secara real-time.</p>
+        <p className="text-sm text-on-surface-variant">Update target dan realisasi APBDes Desa Dumbayabulan per Tahun Anggaran secara real-time.</p>
       </div>
 
       {alert && (

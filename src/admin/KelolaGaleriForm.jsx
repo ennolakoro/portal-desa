@@ -155,7 +155,7 @@ export default function KelolaGaleriForm({ token }) {
       <div className="bg-white p-6 rounded-2xl shadow-sm border border-outline-variant/30 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div>
           <h1 className="text-2xl font-bold text-primary">Kelola Galeri Desa</h1>
-          <p className="text-sm text-on-surface-variant mt-1">Kelola arsip visual dan momen dokumentasi kegiatan Desa Dumbaya Bulan.</p>
+          <p className="text-sm text-on-surface-variant mt-1">Kelola arsip visual dan momen dokumentasi kegiatan Desa Dumbayabulan.</p>
         </div>
 
         {/* Upload Form */}

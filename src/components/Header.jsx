@@ -22,10 +22,10 @@ export default function Header({ currentPage = 'home', setCurrentPage }) {
           onClick={() => setCurrentPage('home')}
         >
           <div className="w-10 h-10 rounded-lg flex items-center justify-center overflow-hidden">
-            <img src="/logoo.png" alt="Logo Desa Dumbaya Bulan" className="w-full h-full object-contain" />
+            <img src="/logoo.png" alt="Logo Desa Dumbayabulan" className="w-full h-full object-contain" />
           </div>
           <span className="font-semibold text-xl md:text-2xl tracking-tight">
-            Desa Dumbaya Bulan
+            Desa Dumbayabulan
             <span className="block text-xs font-medium opacity-80">Kabupaten Bone Bolango</span>
           </span>
         </div>

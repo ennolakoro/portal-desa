@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 
 export default function Hero() {
   const [settings, setSettings] = useState({
-    hero_title: 'Portal Resmi Transformasi Digital Desa Dumbaya Bulan',
-    hero_tagline: 'Pusat informasi pemerintahan terpadu, layanan publik modern, dan eksplorasi potensi lokal untuk kesejahteraan warga Desa Dumbaya Bulan, Kabupaten Bone Bolango.'
+    hero_title: 'Portal Resmi Transformasi Digital Desa Dumbayabulan',
+    hero_tagline: 'Pusat informasi pemerintahan terpadu, layanan publik modern, dan eksplorasi potensi lokal untuk kesejahteraan warga Desa Dumbayabulan, Kabupaten Bone Bolango.'
   });
 
   useEffect(() => {
@@ -22,7 +22,7 @@ export default function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          alt="Panoramic landscape of Dumbaya Bulan Village"
+          alt="Panoramic landscape of Dumbayabulan Village"
           className="w-full h-full object-cover scale-105"
           src="https://lh3.googleusercontent.com/aida-public/AB6AXuBvJsKmV289A-gj3oBHyvukiDt0RVDC_YyQ0rzaZE6YhLiB-CKstYZMUUcFaeL8mBJedRZeltMcvrI99iqPSRDDr2WPp79g6ilerAdT5ZLtGLHaE2Ht2trpFj5zNgqNb4QK7xaGiZo_7bBjeB3i5KdFRYbkfrkwkc91sHLrATiyGV4rtALe1ZZVD8Ln-BivjspzpuAJvPHq95GZplGdaGM6iGczhcUrIu51OIR172CHmzgr92VtcdmxpY33VQJ2oSsomNWNPLwbMcug"
         />

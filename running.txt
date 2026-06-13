@@ -1,5 +1,5 @@
 ========================================================================
-       TUTORIAL MENJALANKAN APLIKASI DESA DUMBAYA BULAN
+       TUTORIAL MENJALANKAN APLIKASI DESA DUMBAYABULAN
 ========================================================================
 
 Dokumen ini menjelaskan langkah-langkah untuk menyiapkan dan menjalankan 
@@ -63,7 +63,7 @@ LANGKAH 2: MENYIAPKAN & MENJALANKAN FRONTEND (REACT + VITE)
 ========================================================================
 
 1. Buka jendela Terminal baru dan pastikan Anda berada di direktori utama (root) proyek:
-   cd "d:\Project\Desa Dumbaya Bulan"
+   cd "d:\Project\Desa Dumbayabulan"
 
 2. Instal semua dependensi frontend (React, Leaflet, TailwindCSS, dll):
    npm install

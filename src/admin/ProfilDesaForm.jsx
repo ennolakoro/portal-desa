@@ -171,7 +171,7 @@ export default function ProfilDesaForm({ token }) {
     <div className="bg-white rounded-2xl shadow-sm border border-outline-variant overflow-hidden">
       <div className="p-6 border-b border-outline-variant bg-surface-container-lowest">
         <h2 className="text-2xl font-bold text-primary">Pengaturan Profil Desa</h2>
-        <p className="text-on-surface-variant text-sm mt-1">Kelola informasi publik Desa Dumbaya Bulan.</p>
+        <p className="text-on-surface-variant text-sm mt-1">Kelola informasi publik Desa Dumbayabulan.</p>
       </div>
 
       {message && (
@@ -240,7 +240,7 @@ export default function ProfilDesaForm({ token }) {
               value={data.sejarah}
               onChange={(e) => setData({...data, sejarah: e.target.value})}
               className="w-full p-4 rounded-xl border border-outline-variant focus:ring-2 focus:ring-primary outline-none transition-all min-h-[150px]"
-              placeholder="Ceritakan sejarah singkat asal-usul Desa Dumbaya Bulan..."
+              placeholder="Ceritakan sejarah singkat asal-usul Desa Dumbayabulan..."
             />
           </div>
         </section>

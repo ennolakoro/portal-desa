@@ -12,7 +12,7 @@ class LeaderGreetingController extends Controller
     {
         $greeting = LeaderGreeting::firstOrCreate(['id' => 1], [
             'name' => 'Taslim, S.Pd',
-            'content' => 'Selamat datang di portal informasi digital Desa Dumbaya Bulan.',
+            'content' => 'Selamat datang di portal informasi digital Desa Dumbayabulan.',
             'photo' => ''
         ]);
         return response()->json($greeting);

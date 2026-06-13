@@ -190,7 +190,7 @@ export default function KelolaBansosForm({ token }) {
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <h2 className="text-2xl font-extrabold text-primary">Kelola Bansos</h2>
-          <p className="text-sm text-on-surface-variant">Manajemen data penerima Bantuan Sosial Desa Dumbaya Bulan</p>
+          <p className="text-sm text-on-surface-variant">Manajemen data penerima Bantuan Sosial Desa Dumbayabulan</p>
         </div>
         <button
           onClick={openAdd}

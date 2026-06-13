@@ -35,22 +35,22 @@ const createCustomIcon = (category) => {
 const poiData = [
   {
     id: 1,
-    name: 'Kantor Kepala Desa Dumbaya Bulan',
+    name: 'Kantor Kepala Desa Dumbayabulan',
     category: 'kantor',
     lat: 0.51488,
     lng: 123.2243,
-    description: 'Pusat administrasi, koordinasi pembangunan, dan pelayanan publik masyarakat Desa Dumbaya Bulan.',
-    address: 'Jln. Utama Dumbaya Bulan, Dusun Kampung Baru',
+    description: 'Pusat administrasi, koordinasi pembangunan, dan pelayanan publik masyarakat Desa Dumbayabulan.',
+    address: 'Jln. Utama Dumbayabulan, Dusun Kampung Baru',
     phone: '0812-3456-7890'
   },
   {
     id: 2,
-    name: 'Puskesmas Pembantu (Pustu) Dumbaya Bulan',
+    name: 'Puskesmas Pembantu (Pustu) Dumbayabulan',
     category: 'kesehatan',
     lat: 0.5165,
     lng: 123.2215,
-    description: 'Fasilitas pelayanan kesehatan dasar bagi warga Desa Dumbaya Bulan, melayani pemeriksaan umum dan posyandu.',
-    address: 'Dusun Pantai, Desa Dumbaya Bulan',
+    description: 'Fasilitas pelayanan kesehatan dasar bagi warga Desa Dumbayabulan, melayani pemeriksaan umum dan posyandu.',
+    address: 'Dusun Pantai, Desa Dumbayabulan',
     phone: '0853-9988-7766'
   },
   {
@@ -60,16 +60,16 @@ const poiData = [
     lat: 0.5122,
     lng: 123.2280,
     description: 'Pusat pelayanan kesehatan terpadu bagi ibu hamil, bayi, balita, dan lansia di wilayah Dusun Pemukiman.',
-    address: 'Dusun Pemukiman, Desa Dumbaya Bulan',
+    address: 'Dusun Pemukiman, Desa Dumbayabulan',
     phone: '-'
   },
   {
     id: 4,
-    name: 'SDN 1 Suwawa Timur (Dumbaya Bulan)',
+    name: 'SDN 1 Suwawa Timur (Dumbayabulan)',
     category: 'pendidikan',
     lat: 0.5178,
     lng: 123.2255,
-    description: 'Sekolah Dasar Negeri utama di Desa Dumbaya Bulan dengan akreditasi A, mendidik anak-anak tingkat dasar.',
+    description: 'Sekolah Dasar Negeri utama di Desa Dumbayabulan dengan akreditasi A, mendidik anak-anak tingkat dasar.',
     address: 'Jln. Pendidikan No. 4, Dusun Kampung Baru',
     phone: '-'
   },
@@ -80,27 +80,27 @@ const poiData = [
     lat: 0.5135,
     lng: 123.2208,
     description: 'Pendidikan anak usia dini berbasis masyarakat untuk mempersiapkan tumbuh kembang generasi muda desa.',
-    address: 'Dusun Pantai, Desa Dumbaya Bulan',
+    address: 'Dusun Pantai, Desa Dumbayabulan',
     phone: '-'
   },
   {
     id: 6,
-    name: 'Wisata Bantaran Sungai Dumbaya Bulan',
+    name: 'Wisata Bantaran Sungai Dumbayabulan',
     category: 'wisata',
     lat: 0.5190,
     lng: 123.2290,
     description: 'Wisata alam berkonsep ramah lingkungan di sepanjang aliran sungai dengan pemandangan lembah dan gazebo santai.',
-    address: 'Dusun Pemukiman Atas, Desa Dumbaya Bulan',
+    address: 'Dusun Pemukiman Atas, Desa Dumbayabulan',
     phone: '0821-2233-4455'
   },
   {
     id: 7,
-    name: 'Bukit Bintang Dumbaya Bulan',
+    name: 'Bukit Bintang Dumbayabulan',
     category: 'wisata',
     lat: 0.5080,
     lng: 123.2190,
     description: 'Wisata puncak perbukitan dengan latar lanskap pemukiman desa dan pegunungan, populer di sore dan malam hari.',
-    address: 'Dusun Pantai Atas, Desa Dumbaya Bulan',
+    address: 'Dusun Pantai Atas, Desa Dumbayabulan',
     phone: '-'
   }
 ];
@@ -154,7 +154,7 @@ export default function Listing() {
           <p className="text-on-surface-variant text-sm md:text-base">
             Menampilkan Peta Desa Dengan{' '}
             <span className="italic font-semibold">Interest Point</span>{' '}
-            Desa Dumbaya Bulan
+            Desa Dumbayabulan
           </p>
         </div>
       </section>

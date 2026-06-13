@@ -108,7 +108,7 @@ export default function DashboardOverview({ token, setActiveTab }) {
           <div>
             <h1 className="text-2xl md:text-3xl font-black tracking-tight">{getGreeting()}, Admin Desa!</h1>
             <p className="text-white/80 text-sm md:text-base mt-2 max-w-xl font-medium">
-              Selamat datang di portal administrasi Desa Dumbaya Bulan. Kelola informasi kependudukan, transparansi anggaran, status pembangunan, dan publikasi berita desa di satu tempat.
+              Selamat datang di portal administrasi Desa Dumbayabulan. Kelola informasi kependudukan, transparansi anggaran, status pembangunan, dan publikasi berita desa di satu tempat.
             </p>
           </div>
           <div className="bg-white/10 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-white/15 text-sm font-bold flex items-center gap-2 self-stretch md:self-auto justify-center">

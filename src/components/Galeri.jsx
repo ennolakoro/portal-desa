@@ -97,10 +97,10 @@ export default function Galeri({ setCurrentPage }) {
             Koleksi Visual
           </span>
           <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight">
-            Galeri Desa Dumbaya Bulan
+            Galeri Desa Dumbayabulan
           </h1>
           <p className="text-on-primary/80 text-sm md:text-base leading-relaxed">
-            Menampilkan dokumentasi pembangunan, kegiatan kemasyarakatan, keindahan alam, serta potensi unggulan di wilayah Desa Dumbaya Bulan.
+            Menampilkan dokumentasi pembangunan, kegiatan kemasyarakatan, keindahan alam, serta potensi unggulan di wilayah Desa Dumbayabulan.
           </p>
         </div>
       </div>
@@ -190,7 +190,7 @@ export default function Galeri({ setCurrentPage }) {
               {/* Text Description Box */}
               <div className="p-4">
                 <p className="text-on-surface font-semibold text-sm line-clamp-2 leading-relaxed">
-                  {img.keterangan || img.alt || 'Dokumentasi Kegiatan Desa Dumbaya Bulan'}
+                  {img.keterangan || img.alt || 'Dokumentasi Kegiatan Desa Dumbayabulan'}
                 </p>
               </div>
             </div>
@@ -266,7 +266,7 @@ export default function Galeri({ setCurrentPage }) {
           {/* Image Caption Bottom */}
           <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end items-center pb-6 text-center px-4">
             <p className="text-white text-base font-semibold max-w-2xl drop-shadow">
-              {filteredGalleries[activeImageIndex].alt || 'Galeri Foto Desa Dumbaya Bulan'}
+              {filteredGalleries[activeImageIndex].alt || 'Galeri Foto Desa Dumbayabulan'}
             </p>
           </div>
         </div>

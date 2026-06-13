@@ -1,8 +1,8 @@
 ========================================================================
-        PANDUAN HOSING APLIKASI DESA DUMBAYA BULAN (LARAVEL + REACT)
+        PANDUAN HOSING APLIKASI DESA DUMBAYABULAN (LARAVEL + REACT)
 ========================================================================
 Dokumen ini menjelaskan langkah-langkah untuk melakukan deployment dan 
-hosting aplikasi Desa Dumbaya Bulan (Frontend React & Backend Laravel)
+hosting aplikasi Desa Dumbayabulan (Frontend React & Backend Laravel)
 pada tiga control panel populer: CyberPanel, cPanel, dan HestiaCP.
 
 ------------------------------------------------------------------------

@@ -43,7 +43,7 @@ export default function Login({ setToken }) {
             <span className="material-symbols-outlined text-primary text-3xl font-bold">admin_panel_settings</span>
           </div>
           <h1 className="text-2xl font-bold text-primary">Admin Portal</h1>
-          <p className="text-on-surface-variant text-sm">Masuk untuk mengelola Desa Dumbaya Bulan</p>
+          <p className="text-on-surface-variant text-sm">Masuk untuk mengelola Desa Dumbayabulan</p>
         </div>
 
         {error && (

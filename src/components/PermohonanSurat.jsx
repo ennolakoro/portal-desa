@@ -107,7 +107,7 @@ export default function PermohonanSurat() {
               Permohonan Surat Online
             </h1>
             <p className="mt-3 text-on-surface-variant text-sm leading-relaxed">
-              Masyarakat Desa Dumbaya Bulan kini dapat mengajukan permohonan berbagai jenis surat administrasi secara langsung tanpa harus datang berulang kali.
+              Masyarakat Desa Dumbayabulan kini dapat mengajukan permohonan berbagai jenis surat administrasi secara langsung tanpa harus datang berulang kali.
             </p>
           </div>
 

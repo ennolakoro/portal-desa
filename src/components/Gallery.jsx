@@ -57,7 +57,7 @@ export default function Gallery({ setCurrentPage }) {
               Lensa Visual
             </span>
             <h2 className="text-primary font-semibold text-4xl tracking-tight">
-              Galeri Desa Dumbaya Bulan
+              Galeri Desa Dumbayabulan
             </h2>
           </div>
           <button 
@@ -94,7 +94,7 @@ export default function Gallery({ setCurrentPage }) {
               {/* Text Description Box */}
               <div className="p-4">
                 <p className="text-on-surface font-semibold text-sm line-clamp-2 leading-relaxed">
-                  {img.keterangan || img.alt || 'Dokumentasi Kegiatan Desa Dumbaya Bulan'}
+                  {img.keterangan || img.alt || 'Dokumentasi Kegiatan Desa Dumbayabulan'}
                 </p>
               </div>
             </div>
@@ -170,7 +170,7 @@ export default function Gallery({ setCurrentPage }) {
           {/* Image Caption Bottom */}
           <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end items-center pb-6 text-center px-4">
             <p className="text-white text-base font-semibold max-w-2xl drop-shadow">
-              {previewGalleries[activeImageIndex].alt || 'Galeri Foto Desa Dumbaya Bulan'}
+              {previewGalleries[activeImageIndex].alt || 'Galeri Foto Desa Dumbayabulan'}
             </p>
           </div>
         </div>

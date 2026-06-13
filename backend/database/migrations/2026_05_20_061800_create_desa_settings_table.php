@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('desa_settings', function (Blueprint $table) {
             $table->id();
-            $table->string('hero_title')->default('Portal Resmi Transformasi Digital Desa Dumbaya Bulan');
+            $table->string('hero_title')->default('Portal Resmi Transformasi Digital Desa Dumbayabulan');
             $table->text('hero_tagline')->nullable();
             $table->string('footer_alamat_kantor')->default('[Alamat kantor]');
             $table->text('footer_detail_alamat')->nullable();

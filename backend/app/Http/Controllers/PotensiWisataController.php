@@ -16,7 +16,7 @@ class PotensiWisataController extends Controller
             PotensiWisata::create([
                 'type' => 'potensi',
                 'title' => 'Sektor Kelautan & Perikanan',
-                'description' => 'Hasil perikanan laut yang melimpah seperti tongkol dan cakalang menjadi penopang ekonomi utama warga pesisir Desa Dumbaya Bulan.',
+                'description' => 'Hasil perikanan laut yang melimpah seperti tongkol dan cakalang menjadi penopang ekonomi utama warga pesisir Desa Dumbayabulan.',
                 'icon' => 'sailing'
             ]);
             PotensiWisata::create([
