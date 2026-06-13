@@ -1,0 +1,15 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Dusun extends Model
+{
+    protected $guarded = [];
+
+    public function penduduks()
+    {
+        return $this->hasMany(Penduduk::class);
+    }
+}

@@ -1,0 +1,99 @@
+========================================================================
+       TUTORIAL MENJALANKAN APLIKASI DESA DUMBAYA BULAN
+========================================================================
+
+Dokumen ini menjelaskan langkah-langkah untuk menyiapkan dan menjalankan 
+backend (Laravel) serta frontend (React + Vite) di lingkungan lokal Anda.
+
+------------------------------------------------------------------------
+PRASYARAT (PREREQUISITES)
+------------------------------------------------------------------------
+Sebelum memulai, pastikan Anda telah menginstal software berikut:
+1. Node.js (direkomendasikan versi LTS terbaru) & npm
+2. PHP (versi 8.2 atau lebih baru)
+3. Composer (untuk mengelola dependensi PHP/Laravel)
+4. MySQL Server (bisa menggunakan XAMPP, Laragon, atau MySQL standalone)
+
+========================================================================
+LANGKAH 1: MENYIAPKAN & MENJALANKAN BACKEND (LARAVEL)
+========================================================================
+
+1. Buka Terminal atau Command Prompt, lalu masuk ke direktori backend:
+   cd backend
+
+2. Salin file environment configuration:
+   Jika belum ada file ".env", duplikat file ".env.example" menjadi ".env":
+   cp .env.example .env   (di Linux/macOS)
+   atau
+   copy .env.example .env (di Windows Command Prompt)
+   
+   Catatan: File .env bawaan proyek ini secara default sudah terkonfigurasi untuk:
+   - Host: 127.0.0.1 (localhost)
+   - Port Database: 3306
+   - Database: desa_dumbaya_bulan
+   - Username: root
+   - Password: [kosong]
+
+3. Instal semua dependensi PHP/Laravel menggunakan Composer:
+   composer install
+
+4. Generate Application Key untuk keamanan Laravel:
+   php artisan key:generate
+
+5. Pastikan MySQL Server Anda sudah menyala (aktif).
+
+6. Buat Database "desa_dumbaya_bulan":
+   Anda dapat membuat database dengan cara menjalankan script otomatis yang telah disediakan:
+   php create_db.php
+   
+   (Atau jika ingin membuat database secara manual, buat database baru dengan nama 
+   `desa_dumbaya_bulan` melalui phpMyAdmin, DBeaver, atau klien MySQL lainnya).
+
+7. Jalankan Migrasi Database dan Seeder untuk mengisi data awal (termasuk akun admin):
+   php artisan migrate --seed
+
+8. Jalankan server lokal Laravel:
+   php artisan serve
+
+   Server backend akan berjalan secara default di alamat:
+   http://localhost:8000 (Pastikan port ini tetap 8000 karena frontend terkonfigurasi ke port ini).
+
+========================================================================
+LANGKAH 2: MENYIAPKAN & MENJALANKAN FRONTEND (REACT + VITE)
+========================================================================
+
+1. Buka jendela Terminal baru dan pastikan Anda berada di direktori utama (root) proyek:
+   cd "d:\Project\Desa Dumbaya Bulan"
+
+2. Instal semua dependensi frontend (React, Leaflet, TailwindCSS, dll):
+   npm install
+
+3. Jalankan server development Vite:
+   npm run dev
+
+   Server frontend akan berjalan secara default di alamat:
+   http://localhost:5173 (atau port yang tertera pada output terminal Anda)
+   Buka alamat tersebut di browser untuk mengakses aplikasi.
+
+========================================================================
+INFORMASI PENTING & LOGIN ADMIN
+========================================================================
+
+- Endpoint API Backend: http://localhost:8000/api/v1
+- Akses Halaman Admin: Buka menu Login Admin di frontend (atau akses url login admin)
+- Akun Default Admin (hasil seeder):
+  * Email: admin@desadumbayabulan.id
+  * Password: password123
+
+========================================================================
+PEMECAHAN MASALAH (TROUBLESHOOTING)
+========================================================================
+
+1. Error: "Gagal menghubungkan ke server backend (port 8000)"
+   -> Pastikan perintah `php artisan serve` di direktori backend sedang aktif dan berjalan lancar.
+   
+2. Error: "Database 'desa_dumbaya_bulan' not found"
+   -> Pastikan Anda sudah menjalankan `php create_db.php` ATAU membuat databasenya secara manual sebelum menjalankan `php artisan migrate --seed`.
+
+3. Error saat `composer install`
+   -> Pastikan ekstensi PHP yang dibutuhkan (seperti pdo_mysql, curl, openssl, mbstring, xml, dll) sudah diaktifkan di file `php.ini` Anda.
