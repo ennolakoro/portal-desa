@@ -51,7 +51,7 @@ export default function KelolaIdmForm({ token }) {
     setIsLoading(true);
     setError(null);
     try {
-      const resSummary = await fetch('http://localhost:8000/api/v1/admin/idm', {
+      const resSummary = await fetch('https://api.desadumbayabulan.my.id/api/v1/admin/idm', {
         headers: { 'Authorization': `Bearer ${token}`, 'Accept': 'application/json' }
       });
       
@@ -65,7 +65,7 @@ export default function KelolaIdmForm({ token }) {
       const dataSummary = await resSummary.json();
       setSummaries(dataSummary);
 
-      const resIndicators = await fetch(`http://localhost:8000/api/v1/admin/idm-indicators?tahun=${selectedYear}`, {
+      const resIndicators = await fetch(`https://api.desadumbayabulan.my.id/api/v1/admin/idm-indicators?tahun=${selectedYear}`, {
         headers: { 'Authorization': `Bearer ${token}`, 'Accept': 'application/json' }
       });
       
@@ -128,8 +128,8 @@ export default function KelolaIdmForm({ token }) {
     setError(null);
 
     const url = editingSummaryId 
-      ? `http://localhost:8000/api/v1/admin/idm/${editingSummaryId}`
-      : 'http://localhost:8000/api/v1/admin/idm';
+      ? `https://api.desadumbayabulan.my.id/api/v1/admin/idm/${editingSummaryId}`
+      : 'https://api.desadumbayabulan.my.id/api/v1/admin/idm';
     const method = editingSummaryId ? 'PUT' : 'POST';
 
     try {
@@ -156,7 +156,7 @@ export default function KelolaIdmForm({ token }) {
   const handleSummaryDelete = async (id) => {
     if (!window.confirm('Yakin ingin menghapus data IDM tahun ini?')) return;
     try {
-      const res = await fetch(`http://localhost:8000/api/v1/admin/idm/${id}`, {
+      const res = await fetch(`https://api.desadumbayabulan.my.id/api/v1/admin/idm/${id}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}`, 'Accept': 'application/json' }
       });
@@ -214,8 +214,8 @@ export default function KelolaIdmForm({ token }) {
     setError(null);
 
     const url = editingIndicatorId 
-      ? `http://localhost:8000/api/v1/admin/idm-indicators/${editingIndicatorId}`
-      : 'http://localhost:8000/api/v1/admin/idm-indicators';
+      ? `https://api.desadumbayabulan.my.id/api/v1/admin/idm-indicators/${editingIndicatorId}`
+      : 'https://api.desadumbayabulan.my.id/api/v1/admin/idm-indicators';
     const method = editingIndicatorId ? 'PUT' : 'POST';
 
     try {
@@ -242,7 +242,7 @@ export default function KelolaIdmForm({ token }) {
   const handleIndicatorDelete = async (id) => {
     if (!window.confirm('Yakin ingin menghapus indikator IDM ini?')) return;
     try {
-      const res = await fetch(`http://localhost:8000/api/v1/admin/idm-indicators/${id}`, {
+      const res = await fetch(`https://api.desadumbayabulan.my.id/api/v1/admin/idm-indicators/${id}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}`, 'Accept': 'application/json' }
       });

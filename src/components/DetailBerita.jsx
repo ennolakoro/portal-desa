@@ -33,20 +33,20 @@ export default function DetailBerita({ newsId = '1', setCurrentPage, setSelected
     
     // Fetch individual news details
     if (newsId && newsId !== 'detail-main') {
-      fetch(`http://localhost:8000/api/v1/berita/${newsId}`)
+      fetch(`https://api.desadumbayabulan.my.id/api/v1/berita/${newsId}`)
         .then(res => res.json())
         .then(data => setNewsItem(data))
         .catch(err => console.error(err));
     } else {
       // Fallback: fetch list and get first
-      fetch(`http://localhost:8000/api/v1/berita`)
+      fetch(`https://api.desadumbayabulan.my.id/api/v1/berita`)
         .then(res => res.json())
         .then(data => setNewsItem(data[0]))
         .catch(err => console.error(err));
     }
 
     // Fetch popular news
-    fetch(`http://localhost:8000/api/v1/berita`)
+    fetch(`https://api.desadumbayabulan.my.id/api/v1/berita`)
         .then(res => res.json())
         .then(data => {
             const sorted = data.sort((a,b) => b.views - a.views).slice(0,3);

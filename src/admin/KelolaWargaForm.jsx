@@ -132,7 +132,7 @@ export default function KelolaWargaForm({ token }) {
     setLoading(true);
     setError('');
     try {
-      const res = await fetch('http://localhost:8000/api/v1/admin/demografi-summary', {
+      const res = await fetch('https://api.desadumbayabulan.my.id/api/v1/admin/demografi-summary', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Accept': 'application/json'
@@ -175,7 +175,7 @@ export default function KelolaWargaForm({ token }) {
     };
 
     try {
-      const res = await fetch('http://localhost:8000/api/v1/admin/demografi-summary', {
+      const res = await fetch('https://api.desadumbayabulan.my.id/api/v1/admin/demografi-summary', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,

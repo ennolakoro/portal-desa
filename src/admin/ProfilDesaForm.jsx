@@ -30,7 +30,7 @@ export default function ProfilDesaForm({ token }) {
 
   const fetchData = async () => {
     try {
-      const res = await fetch('http://localhost:8000/api/v1/admin/profil-desa', {
+      const res = await fetch('https://api.desadumbayabulan.my.id/api/v1/admin/profil-desa', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Accept': 'application/json'
@@ -123,7 +123,7 @@ export default function ProfilDesaForm({ token }) {
     }
 
     try {
-      const res = await fetch('http://localhost:8000/api/v1/admin/profil-desa', {
+      const res = await fetch('https://api.desadumbayabulan.my.id/api/v1/admin/profil-desa', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,

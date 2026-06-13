@@ -20,7 +20,7 @@ export default function KelolaSambutanForm({ token }) {
   const fetchGreeting = async () => {
     setIsLoading(true);
     try {
-      const res = await fetch('http://localhost:8000/api/v1/admin/leader-greeting', {
+      const res = await fetch('https://api.desadumbayabulan.my.id/api/v1/admin/leader-greeting', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Accept': 'application/json'
@@ -64,7 +64,7 @@ export default function KelolaSambutanForm({ token }) {
     }
 
     try {
-      const res = await fetch('http://localhost:8000/api/v1/admin/leader-greeting', {
+      const res = await fetch('https://api.desadumbayabulan.my.id/api/v1/admin/leader-greeting', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,

@@ -26,6 +26,10 @@ return [
         'http://127.0.0.1:5173',
         'http://127.0.0.1:5174',
         'http://127.0.0.1:5175',
+        'https://desadumbayabulan.my.id',
+        'http://desadumbayabulan.my.id',
+        'https://www.desadumbayabulan.my.id',
+        'http://www.desadumbayabulan.my.id',
     ],
 
     'allowed_origins_patterns' => [],

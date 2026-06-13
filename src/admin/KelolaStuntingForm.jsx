@@ -36,7 +36,7 @@ export default function KelolaStuntingForm({ token }) {
   const fetchAll = useCallback(async () => {
     setListLoading(true);
     try {
-      const res = await fetch('http://localhost:8000/api/v1/admin/stunting-stats', {
+      const res = await fetch('https://api.desadumbayabulan.my.id/api/v1/admin/stunting-stats', {
         headers: { 'Authorization': `Bearer ${token}`, 'Accept': 'application/json' }
       });
       if (res.status === 401) { localStorage.removeItem('adminToken'); window.location.reload(); return; }
@@ -84,7 +84,7 @@ export default function KelolaStuntingForm({ token }) {
     setIsSaving(true);
     setMessage('');
     try {
-      const res = await fetch('http://localhost:8000/api/v1/admin/stunting-stats', {
+      const res = await fetch('https://api.desadumbayabulan.my.id/api/v1/admin/stunting-stats', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -113,7 +113,7 @@ export default function KelolaStuntingForm({ token }) {
     if (!deleteTarget) return;
     setDeleting(true);
     try {
-      const res = await fetch(`http://localhost:8000/api/v1/admin/stunting-stats/${deleteTarget.tahun}`, {
+      const res = await fetch(`https://api.desadumbayabulan.my.id/api/v1/admin/stunting-stats/${deleteTarget.tahun}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}`, 'Accept': 'application/json' }
       });

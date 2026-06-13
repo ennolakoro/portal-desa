@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 
-const API = 'http://localhost:8000/api/v1/foto-slider';
+const API = 'https://api.desadumbayabulan.my.id/api/v1/foto-slider';
 const PER_PAGE = 4; // Tampilkan 4 foto sekaligus
 
 export default function FotoSlider() {

@@ -21,7 +21,7 @@ export default function KelolaKunjunganForm({ token }) {
 
   const fetchStats = async () => {
     try {
-      const res = await fetch('http://localhost:8000/api/v1/admin/visitor-stats', {
+      const res = await fetch('https://api.desadumbayabulan.my.id/api/v1/admin/visitor-stats', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -56,7 +56,7 @@ export default function KelolaKunjunganForm({ token }) {
     setMessage('');
 
     try {
-      const res = await fetch('http://localhost:8000/api/v1/admin/visitor-stats', {
+      const res = await fetch('https://api.desadumbayabulan.my.id/api/v1/admin/visitor-stats', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,

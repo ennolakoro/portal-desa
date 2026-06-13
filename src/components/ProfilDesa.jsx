@@ -20,7 +20,7 @@ export default function ProfilDesa() {
 
   const fetchProfile = async () => {
     try {
-      const res = await fetch('http://localhost:8000/api/v1/profil-desa');
+      const res = await fetch('https://api.desadumbayabulan.my.id/api/v1/profil-desa');
       const json = await res.json();
       if (res.ok) {
         setProfileData(json);

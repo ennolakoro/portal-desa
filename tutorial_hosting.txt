@@ -197,3 +197,37 @@ PEMECAHAN MASALAH UMUM (TROUBLESHOOTING)
    -> Pastikan extension php-curl sudah aktif di hosting Anda.
    -> Pastikan server hosting Anda mengizinkan koneksi keluar (outbound connection) ke `api.fonnte.com` pada port 443.
    -> Periksa file log di `storage/logs/laravel.log` untuk melihat jika ada error detail dari API Fonnte.
+
+3. Error 403 Forbidden di Subdomain API (CyberPanel/OpenLiteSpeed):
+   -> Pastikan Document Root Anda mengarah ke folder `public` (bukan folder utama Laravel), yaitu `public_html/public`.
+   -> Pastikan di vHost Conf Anda terdapat baris `indexFiles index.php, index.html` dan fitur rewrite .htaccess diaktifkan:
+      rewrite  {
+        enable                  1
+        autoLoadHtaccess        1
+      }
+   -> Pastikan permission folder adalah `755` dan file adalah `644`. Anda bisa meresetnya via SSH:
+      $ find /home/domain-api/public_html -type d -exec chmod 755 {} \;
+      $ find /home/domain-api/public_html -type f -exec chmod 644 {} \;
+   -> Restart penuh layanan OpenLiteSpeed Anda via SSH: `systemctl restart lsws` atau tombol Restart di dashboard CyberPanel.
+
+4. Data Database Tidak Tampil di Frontend (Error CORS / ERR_CONNECTION_REFUSED):
+   -> Pastikan file `src/` Anda tidak mengandung string `http://localhost:8000` sebelum melakukan build. Semuanya harus diganti ke domain API produksi Anda (misal `https://api.desadumbayabulan.my.id`).
+   -> Pastikan domain frontend utama Anda telah ditambahkan ke dalam array `allowed_origins` di file `backend/config/cors.php` server:
+      'allowed_origins' => [
+          'https://desadumbayabulan.my.id',
+          'https://www.desadumbayabulan.my.id',
+          ...
+      ]
+   -> Setelah mengunggah file `cors.php` baru, bersihkan cache konfigurasi di server: `$ php artisan config:clear`.
+
+5. Gambar / Foto Slider / Sambutan Pecah atau Mengarah ke Localhost:
+   -> Pastikan baris `APP_URL` di file `.env` server hosting Anda sudah diubah ke domain API Anda, contoh: `APP_URL=https://api.desadumbayabulan.my.id` (agar upload foto baru tidak lagi memakai localhost).
+   -> Untuk memperbaiki data lama yang terlanjur di-import, jalankan query UPDATE REPLACE di phpMyAdmin database Anda:
+      UPDATE galleries SET src = REPLACE(src, 'http://localhost:8000', 'https://api.desadumbayabulan.my.id');
+      UPDATE foto_sliders SET image_url = REPLACE(image_url, 'http://localhost:8000', 'https://api.desadumbayabulan.my.id');
+      UPDATE beritas SET image = REPLACE(image, 'http://localhost:8000', 'https://api.desadumbayabulan.my.id');
+      UPDATE leader_greetings SET photo = REPLACE(photo, 'http://localhost:8000', 'https://api.desadumbayabulan.my.id');
+      UPDATE profil_desas SET bagan_pemerintahan_url = REPLACE(bagan_pemerintahan_url, 'http://localhost:8000', 'https://api.desadumbayabulan.my.id');
+      UPDATE profil_desas SET bagan_bpd_url = REPLACE(bagan_bpd_url, 'http://localhost:8000', 'https://api.desadumbayabulan.my.id');
+   -> Jalankan perintah `$ php artisan storage:link` di server hosting Anda untuk menghubungkan folder storage Laravel.
+

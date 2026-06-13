@@ -113,7 +113,7 @@ export default function Listing() {
   const [mapType, setMapType] = useState('satellite');
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/v1/profil-desa')
+    fetch('https://api.desadumbayabulan.my.id/api/v1/profil-desa')
       .then(res => res.json())
       .then(json => {
         if (json) {

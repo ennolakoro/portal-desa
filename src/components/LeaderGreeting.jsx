@@ -4,7 +4,7 @@ export default function LeaderGreeting() {
   const [greeting, setGreeting] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/v1/leader-greeting')
+    fetch('https://api.desadumbayabulan.my.id/api/v1/leader-greeting')
       .then(res => res.json())
       .then(data => setGreeting(data))
       .catch(err => console.error(err));

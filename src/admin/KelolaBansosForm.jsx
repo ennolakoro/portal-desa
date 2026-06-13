@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 
-const API = 'http://localhost:8000/api/v1/admin';
+const API = 'https://api.desadumbayabulan.my.id/api/v1/admin';
 
 const STATUS_OPTIONS = ['Penerima Aktif', 'Tidak Aktif', 'Dalam Verifikasi'];
 const PROGRAM_OPTIONS = ['Terdaftar', 'Tidak Terdaftar'];
@@ -79,7 +79,7 @@ export default function KelolaBansosForm({ token }) {
 
   const fetchGlobalStats = async () => {
     try {
-      const res  = await fetch('http://localhost:8000/api/v1/layanan/bansos-summary');
+      const res  = await fetch('https://api.desadumbayabulan.my.id/api/v1/layanan/bansos-summary');
       const json = await res.json();
       if (res.ok) setGlobalStats(json);
     } catch {}

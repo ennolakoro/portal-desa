@@ -6,7 +6,7 @@ export default function Gallery({ setCurrentPage }) {
   const [isZoomed, setIsZoomed] = useState(false);
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/v1/gallery')
+    fetch('https://api.desadumbayabulan.my.id/api/v1/gallery')
       .then(res => res.json())
       .then(data => setGalleries(data))
       .catch(err => console.error(err));

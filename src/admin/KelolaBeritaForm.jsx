@@ -33,7 +33,7 @@ export default function KelolaBeritaForm({ token }) {
   const fetchBeritas = async () => {
     setIsLoading(true);
     try {
-      const res = await fetch('http://localhost:8000/api/v1/admin/berita', {
+      const res = await fetch('https://api.desadumbayabulan.my.id/api/v1/admin/berita', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Accept': 'application/json'
@@ -107,7 +107,7 @@ export default function KelolaBeritaForm({ token }) {
     uploadData.append('image', file);
 
     try {
-      const res = await fetch('http://localhost:8000/api/v1/admin/berita/upload-image', {
+      const res = await fetch('https://api.desadumbayabulan.my.id/api/v1/admin/berita/upload-image', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -132,7 +132,7 @@ export default function KelolaBeritaForm({ token }) {
     uploadData.append('image', file);
 
     try {
-      const res = await fetch('http://localhost:8000/api/v1/admin/berita/upload-image', {
+      const res = await fetch('https://api.desadumbayabulan.my.id/api/v1/admin/berita/upload-image', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -170,8 +170,8 @@ export default function KelolaBeritaForm({ token }) {
 
     try {
       const url = editingId 
-        ? `http://localhost:8000/api/v1/admin/berita/${editingId}`
-        : 'http://localhost:8000/api/v1/admin/berita';
+        ? `https://api.desadumbayabulan.my.id/api/v1/admin/berita/${editingId}`
+        : 'https://api.desadumbayabulan.my.id/api/v1/admin/berita';
       
       const res = await fetch(url, {
         method: editingId ? 'PUT' : 'POST',
@@ -198,7 +198,7 @@ export default function KelolaBeritaForm({ token }) {
     if (!window.confirm('Yakin ingin menghapus berita ini?')) return;
     
     try {
-      const res = await fetch(`http://localhost:8000/api/v1/admin/berita/${id}`, {
+      const res = await fetch(`https://api.desadumbayabulan.my.id/api/v1/admin/berita/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`,

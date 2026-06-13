@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 
-const API = 'http://localhost:8000/api/v1/admin';
+const API = 'https://api.desadumbayabulan.my.id/api/v1/admin';
 
 export default function KelolaFotoSliderForm({ token }) {
   const [slides, setSlides]       = useState([]);

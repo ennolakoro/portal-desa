@@ -11,7 +11,7 @@ export default function Galeri({ setCurrentPage }) {
     // Scroll to top on mount
     window.scrollTo(0, 0);
 
-    fetch('http://localhost:8000/api/v1/gallery')
+    fetch('https://api.desadumbayabulan.my.id/api/v1/gallery')
       .then((res) => {
         if (!res.ok) throw new Error('Gagal mengambil data galeri');
         return res.json();

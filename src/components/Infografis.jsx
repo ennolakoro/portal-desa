@@ -56,7 +56,7 @@ export default function Infografis() {
 
   const fetchDemografi = async () => {
     try {
-      const res = await fetch('http://localhost:8000/api/v1/infografis/demografi');
+      const res = await fetch('https://api.desadumbayabulan.my.id/api/v1/infografis/demografi');
       const data = await res.json();
       if (res.ok) setDemografiData(data);
     } catch (e) {
@@ -66,7 +66,7 @@ export default function Infografis() {
 
   const fetchApbdes = async () => {
     try {
-      const res = await fetch(`http://localhost:8000/api/v1/infografis/apbdes?tahun=${selectedYear}`);
+      const res = await fetch(`https://api.desadumbayabulan.my.id/api/v1/infografis/apbdes?tahun=${selectedYear}`);
       const data = await res.json();
       if (res.ok) setApbdesData(data);
     } catch (e) {
@@ -77,7 +77,7 @@ export default function Infografis() {
   const fetchStunting = async (tahun = '2024') => {
     setStuntingData(null);
     try {
-      const res = await fetch(`http://localhost:8000/api/v1/infografis/stunting?tahun=${tahun}`);
+      const res = await fetch(`https://api.desadumbayabulan.my.id/api/v1/infografis/stunting?tahun=${tahun}`);
       const data = await res.json();
       if (res.ok) setStuntingData(data);
     } catch (e) {
@@ -88,7 +88,7 @@ export default function Infografis() {
   const fetchAllStunting = async () => {
     try {
       // No tahun param → backend returns all records sorted by year
-      const res = await fetch('http://localhost:8000/api/v1/infografis/stunting');
+      const res = await fetch('https://api.desadumbayabulan.my.id/api/v1/infografis/stunting');
       const data = await res.json();
       if (res.ok && Array.isArray(data)) setAllStuntingData(data);
     } catch (e) {
@@ -98,7 +98,7 @@ export default function Infografis() {
 
   const fetchBansosStats = async () => {
     try {
-      const res = await fetch('http://localhost:8000/api/v1/layanan/bansos-summary');
+      const res = await fetch('https://api.desadumbayabulan.my.id/api/v1/layanan/bansos-summary');
       const data = await res.json();
       if (res.ok) setBansosStats(data);
     } catch (e) {
@@ -117,7 +117,7 @@ export default function Infografis() {
     }
 
     try {
-      const res = await fetch('http://localhost:8000/api/v1/layanan/cek-bansos', {
+      const res = await fetch('https://api.desadumbayabulan.my.id/api/v1/layanan/cek-bansos', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -31,7 +31,7 @@ export default function KelolaPetaForm({ token }) {
 
   const fetchProfil = async () => {
     try {
-      const res = await fetch('http://localhost:8000/api/v1/admin/profil-desa', {
+      const res = await fetch('https://api.desadumbayabulan.my.id/api/v1/admin/profil-desa', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -80,7 +80,7 @@ export default function KelolaPetaForm({ token }) {
     setMessage('');
     
     try {
-      const res = await fetch('http://localhost:8000/api/v1/admin/profil-desa', {
+      const res = await fetch('https://api.desadumbayabulan.my.id/api/v1/admin/profil-desa', {
         method: 'POST', // POST digunakan untuk update sesuai API di route admin
         headers: {
           'Authorization': `Bearer ${token}`,

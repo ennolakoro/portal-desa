@@ -63,7 +63,7 @@ export default function PermohonanSurat() {
     setLoading(true);
 
     try {
-      const response = await fetch('http://localhost:8000/api/v1/layanan/permohonan-surat', {
+      const response = await fetch('https://api.desadumbayabulan.my.id/api/v1/layanan/permohonan-surat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

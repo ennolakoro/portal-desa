@@ -13,7 +13,7 @@ export default function KelolaPermohonanSuratForm({ token }) {
 
   const fetchRequests = async () => {
     try {
-      const res = await fetch('http://localhost:8000/api/v1/admin/permohonan-surat', {
+      const res = await fetch('https://api.desadumbayabulan.my.id/api/v1/admin/permohonan-surat', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Accept': 'application/json'
@@ -37,7 +37,7 @@ export default function KelolaPermohonanSuratForm({ token }) {
     }
 
     try {
-      const res = await fetch(`http://localhost:8000/api/v1/admin/permohonan-surat/${id}/status`, {
+      const res = await fetch(`https://api.desadumbayabulan.my.id/api/v1/admin/permohonan-surat/${id}/status`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -67,7 +67,7 @@ export default function KelolaPermohonanSuratForm({ token }) {
     }
 
     try {
-      const res = await fetch(`http://localhost:8000/api/v1/admin/permohonan-surat/${id}`, {
+      const res = await fetch(`https://api.desadumbayabulan.my.id/api/v1/admin/permohonan-surat/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`,

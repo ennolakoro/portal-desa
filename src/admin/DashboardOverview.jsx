@@ -20,20 +20,20 @@ export default function DashboardOverview({ token, setActiveTab }) {
     const fetchDashboardData = async () => {
       try {
         // Fetch Demografi
-        const resDemografi = await fetch('http://localhost:8000/api/v1/infografis/demografi');
+        const resDemografi = await fetch('https://api.desadumbayabulan.my.id/api/v1/infografis/demografi');
         const dataDemografi = await resDemografi.json();
 
         // Fetch APBDes for 2024
-        const resApbdes = await fetch('http://localhost:8000/api/v1/infografis/apbdes?tahun=2024');
+        const resApbdes = await fetch('https://api.desadumbayabulan.my.id/api/v1/infografis/apbdes?tahun=2024');
         const dataApbdes = await resApbdes.json();
 
         // Fetch IDM
-        const resIdm = await fetch('http://localhost:8000/api/v1/infografis/idm');
+        const resIdm = await fetch('https://api.desadumbayabulan.my.id/api/v1/infografis/idm');
         const dataIdm = await resIdm.json();
         const latestIdm = dataIdm.length > 0 ? dataIdm[0] : null;
 
         // Fetch Berita
-        const resBerita = await fetch('http://localhost:8000/api/v1/berita');
+        const resBerita = await fetch('https://api.desadumbayabulan.my.id/api/v1/berita');
         const dataBerita = await resBerita.json();
 
         setStats({

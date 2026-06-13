@@ -21,7 +21,7 @@ export default function KelolaPotensiForm({ token }) {
 
   const fetchItems = async () => {
     try {
-      const res = await fetch('http://localhost:8000/api/v1/admin/potensi-wisata', {
+      const res = await fetch('https://api.desadumbayabulan.my.id/api/v1/admin/potensi-wisata', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -53,7 +53,7 @@ export default function KelolaPotensiForm({ token }) {
   const handleDelete = async (id) => {
     if (!confirm('Apakah Anda yakin ingin menghapus data potensi/wisata ini?')) return;
     try {
-      const res = await fetch(`http://localhost:8000/api/v1/admin/potensi-wisata/${id}`, {
+      const res = await fetch(`https://api.desadumbayabulan.my.id/api/v1/admin/potensi-wisata/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -94,8 +94,8 @@ export default function KelolaPotensiForm({ token }) {
     setMessage('');
 
     const url = isEditing
-      ? `http://localhost:8000/api/v1/admin/potensi-wisata/${formData.id}`
-      : 'http://localhost:8000/api/v1/admin/potensi-wisata';
+      ? `https://api.desadumbayabulan.my.id/api/v1/admin/potensi-wisata/${formData.id}`
+      : 'https://api.desadumbayabulan.my.id/api/v1/admin/potensi-wisata';
     const method = isEditing ? 'PUT' : 'POST';
 
     try {

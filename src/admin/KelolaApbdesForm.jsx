@@ -25,7 +25,7 @@ export default function KelolaApbdesForm({ token }) {
   const fetchApbdes = async () => {
     setLoading(true);
     try {
-      const res = await fetch('http://localhost:8000/api/v1/admin/apbdes', {
+      const res = await fetch('https://api.desadumbayabulan.my.id/api/v1/admin/apbdes', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Accept': 'application/json',
@@ -67,7 +67,7 @@ export default function KelolaApbdesForm({ token }) {
     setAlert(null);
 
     try {
-      const res = await fetch('http://localhost:8000/api/v1/admin/apbdes', {
+      const res = await fetch('https://api.desadumbayabulan.my.id/api/v1/admin/apbdes', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,

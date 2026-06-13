@@ -8,7 +8,7 @@ export default function AdminLayout({ children, setToken, activeTab, setActiveTa
 
   const handleLogout = async () => {
     try {
-      await fetch('http://localhost:8000/api/auth/logout', {
+      await fetch('https://api.desadumbayabulan.my.id/api/auth/logout', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('adminToken')}`,

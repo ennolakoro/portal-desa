@@ -29,7 +29,7 @@ export default function KelolaPengaturanForm({ token }) {
     setLoading(true);
     setError('');
     try {
-      const res = await fetch('http://localhost:8000/api/v1/admin/desa-setting', {
+      const res = await fetch('https://api.desadumbayabulan.my.id/api/v1/admin/desa-setting', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Accept': 'application/json'
@@ -65,7 +65,7 @@ export default function KelolaPengaturanForm({ token }) {
     setError('');
 
     try {
-      const res = await fetch('http://localhost:8000/api/v1/admin/desa-setting', {
+      const res = await fetch('https://api.desadumbayabulan.my.id/api/v1/admin/desa-setting', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,

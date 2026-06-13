@@ -12,7 +12,7 @@ export default function Idm() {
   useEffect(() => {
     const fetchSummaries = async () => {
       try {
-        const idmRes = await fetch('http://localhost:8000/api/v1/infografis/idm');
+        const idmRes = await fetch('https://api.desadumbayabulan.my.id/api/v1/infografis/idm');
         const idmJson = await idmRes.json();
 
         if (Array.isArray(idmJson) && idmJson.length > 0) {
@@ -37,7 +37,7 @@ export default function Idm() {
     const fetchIndicatorsForYear = async () => {
       setLoadingIndicators(true);
       try {
-        const indicatorRes = await fetch(`http://localhost:8000/api/v1/infografis/idm-indicators?tahun=${selectedYear}`);
+        const indicatorRes = await fetch(`https://api.desadumbayabulan.my.id/api/v1/infografis/idm-indicators?tahun=${selectedYear}`);
         const indicatorJson = await indicatorRes.json();
         if (Array.isArray(indicatorJson)) {
           setIndicators(indicatorJson);

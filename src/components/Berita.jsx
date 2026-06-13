@@ -9,7 +9,7 @@ export default function Berita({ setCurrentPage, setSelectedNewsId }) {
   const [activePaginationPage, setActivePaginationPage] = useState(1);
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/v1/berita')
+    fetch('https://api.desadumbayabulan.my.id/api/v1/berita')
       .then(res => res.json())
       .then(data => setNewsData(data))
       .catch(err => console.error(err));

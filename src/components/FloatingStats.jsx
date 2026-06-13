@@ -10,7 +10,7 @@ export default function FloatingStats() {
 
   const fetchStats = async () => {
     try {
-      const res = await fetch('http://localhost:8000/api/v1/visitor/stats');
+      const res = await fetch('https://api.desadumbayabulan.my.id/api/v1/visitor/stats');
       if (res.ok) {
         const data = await res.json();
         setStats(data);

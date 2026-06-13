@@ -7,7 +7,7 @@ export default function Hero() {
   });
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/v1/desa-setting')
+    fetch('https://api.desadumbayabulan.my.id/api/v1/desa-setting')
       .then(res => res.json())
       .then(data => {
         if (data) {

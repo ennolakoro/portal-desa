@@ -4,7 +4,7 @@ export default function NewsSection({ setCurrentPage, setSelectedNewsId }) {
   const [newsData, setNewsData] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/v1/berita')
+    fetch('https://api.desadumbayabulan.my.id/api/v1/berita')
       .then(res => res.json())
       .then(data => setNewsData(data.slice(0, 2))) // Get latest 2 news
       .catch(err => console.error(err));

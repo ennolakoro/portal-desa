@@ -25,7 +25,7 @@ export default function KelolaGaleriForm({ token }) {
   const fetchGalleries = async () => {
     setIsLoading(true);
     try {
-      const res = await fetch('http://localhost:8000/api/v1/admin/gallery', {
+      const res = await fetch('https://api.desadumbayabulan.my.id/api/v1/admin/gallery', {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Accept': 'application/json'
@@ -81,7 +81,7 @@ export default function KelolaGaleriForm({ token }) {
     uploadData.append('keterangan', keterangan || '');
 
     try {
-      const res = await fetch('http://localhost:8000/api/v1/admin/gallery', {
+      const res = await fetch('https://api.desadumbayabulan.my.id/api/v1/admin/gallery', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -105,7 +105,7 @@ export default function KelolaGaleriForm({ token }) {
     if (!window.confirm('Yakin ingin menghapus foto ini dari galeri desa?')) return;
 
     try {
-      const res = await fetch(`http://localhost:8000/api/v1/admin/gallery/${id}`, {
+      const res = await fetch(`https://api.desadumbayabulan.my.id/api/v1/admin/gallery/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -125,7 +125,7 @@ export default function KelolaGaleriForm({ token }) {
     if (newKeterangan === null) return; // User cancelled
 
     try {
-      const res = await fetch(`http://localhost:8000/api/v1/admin/gallery/${img.id}`, {
+      const res = await fetch(`https://api.desadumbayabulan.my.id/api/v1/admin/gallery/${img.id}`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`,

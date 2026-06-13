@@ -8,7 +8,7 @@ export default function MapAndStats({ setCurrentPage }) {
   const [demografiData, setDemografiData] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/v1/profil-desa')
+    fetch('https://api.desadumbayabulan.my.id/api/v1/profil-desa')
       .then(res => res.json())
       .then(json => {
         if (json) {
@@ -24,7 +24,7 @@ export default function MapAndStats({ setCurrentPage }) {
       })
       .catch(err => console.error(err));
 
-    fetch('http://localhost:8000/api/v1/infografis/apbdes?tahun=2024')
+    fetch('https://api.desadumbayabulan.my.id/api/v1/infografis/apbdes?tahun=2024')
       .then(res => res.json())
       .then(json => {
         if (json && !json.message) {
@@ -33,7 +33,7 @@ export default function MapAndStats({ setCurrentPage }) {
       })
       .catch(err => console.error(err));
 
-    fetch('http://localhost:8000/api/v1/infografis/demografi')
+    fetch('https://api.desadumbayabulan.my.id/api/v1/infografis/demografi')
       .then(res => res.json())
       .then(json => {
         if (json && json.summary) {
@@ -43,10 +43,10 @@ export default function MapAndStats({ setCurrentPage }) {
       .catch(err => console.error(err));
   }, []);
 
-  const center = profilData?.map_lat && profilData?.map_lng 
+  const center = profilData?.map_lat && profilData?.map_lng
     ? [parseFloat(profilData.map_lat), parseFloat(profilData.map_lng)]
     : [0.5432, 123.1234]; // Fallback coordinate if not set
-    
+
   const zoom = profilData?.map_zoom ? parseInt(profilData.map_zoom) : 13;
 
   return (
@@ -60,7 +60,7 @@ export default function MapAndStats({ setCurrentPage }) {
               Distribusi Point of Interest Desa Dumbaya Bulan
             </p>
           </div>
-          <button 
+          <button
             onClick={() => setCurrentPage && setCurrentPage('profil')}
             className="flex items-center gap-2 text-primary font-bold hover:gap-3 transition-all cursor-pointer"
           >
@@ -77,11 +77,11 @@ export default function MapAndStats({ setCurrentPage }) {
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
               />
               <Marker position={center}></Marker>
-              
+
               {geoJsonData && (
-                <GeoJSON 
-                  key="village-border" 
-                  data={geoJsonData} 
+                <GeoJSON
+                  key="village-border"
+                  data={geoJsonData}
                   style={{ color: '#2563eb', weight: 2, fillColor: '#3b82f6', fillOpacity: 0.2 }}
                 />
               )}
@@ -152,8 +152,8 @@ export default function MapAndStats({ setCurrentPage }) {
               </span>
             </div>
           </div>
-          <button 
-            onClick={() => setCurrentPage && setCurrentPage('infografis')}
+          <button
+            onClick={() => setCurrentPage && setCurrentPage('infografis', 'apbdes')}
             className="mt-8 w-full py-4 bg-primary/5 text-primary font-bold rounded-lg hover:bg-primary hover:text-white transition-all flex items-center justify-center gap-3 cursor-pointer"
           >
             Laporan Keuangan <span className="material-symbols-outlined">analytics</span>

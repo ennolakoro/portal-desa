@@ -10,7 +10,7 @@ export default function PotentialAndTourism() {
 
   const fetchItems = async () => {
     try {
-      const res = await fetch('http://localhost:8000/api/v1/potensi-wisata');
+      const res = await fetch('https://api.desadumbayabulan.my.id/api/v1/potensi-wisata');
       if (res.ok) {
         const data = await res.json();
         setItems(data);
