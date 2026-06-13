@@ -1,0 +1,199 @@
+========================================================================
+        PANDUAN HOSING APLIKASI DESA DUMBAYA BULAN (LARAVEL + REACT)
+========================================================================
+Dokumen ini menjelaskan langkah-langkah untuk melakukan deployment dan 
+hosting aplikasi Desa Dumbaya Bulan (Frontend React & Backend Laravel)
+pada tiga control panel populer: CyberPanel, cPanel, dan HestiaCP.
+
+------------------------------------------------------------------------
+STRUKTUR PENYEBARAN (DEPLOYMENT ARCHITECTURE)
+------------------------------------------------------------------------
+Direkomendasikan menggunakan skema subdomain untuk memisahkan Frontend dan Backend:
+1. Frontend (React Static): https://desadumbayabulan.id (Domain Utama)
+2. Backend (Laravel API): https://api.desadumbayabulan.id (Subdomain)
+
+========================================================================
+LANGKAH PERSIPAN (WAJIB DILAKUKAN SEBELUM UPLOAD)
+========================================================================
+
+1. UBAH URL API DI FRONTEND:
+   Sebelum melakukan build frontend, Anda wajib mengganti URL API localhost 
+   di frontend dengan domain produksi API Anda.
+   Cari teks: 'http://localhost:8000' di folder `src/`
+   Ganti dengan: 'https://api.desadumbayabulan.id' (sesuaikan domain Anda)
+
+2. BUILD FRONTEND:
+   Buka terminal di root project, jalankan:
+   $ npm run build
+   Perintah ini akan menghasilkan folder bernama `dist` berisi file statis (HTML, JS, CSS).
+   Kompres isi folder `dist` menjadi file `frontend.zip` (Zip isinya langsung, bukan folder dist-nya).
+
+3. ZIP BACKEND:
+   Kompres folder `backend` menjadi file `backend.zip`. 
+   Catatan: Hapus folder `node_modules`, `vendor`, dan file `.env` sebelum di-zip untuk menghemat ukuran.
+
+========================================================================
+BAGIAN 1: HOSTING DI CYBERPANEL (OPENLITESPEED)
+========================================================================
+
+A. Setup Website di CyberPanel:
+   1. Masuk ke CyberPanel -> Websites -> Create Website.
+   2. Daftarkan Domain Utama (misal: desadumbayabulan.id) -> Select PHP (8.2 ke atas).
+   3. Daftarkan Subdomain (misal: api.desadumbayabulan.id) -> Select PHP (8.2 ke atas).
+   4. Aktifkan SSL (Let's Encrypt) untuk kedua website tersebut di menu SSL -> Manage SSL.
+
+B. Deployment Frontend:
+   1. Buka Websites -> List Websites -> Klik "Manage" pada domain utama (desadumbayabulan.id).
+   2. Klik "File Manager" -> masuk ke folder `public_html`.
+   3. Hapus file bawaan index.html jika ada.
+   4. Upload file `frontend.zip` dan Extract.
+   5. Buka "Rewrite Rules" pada Website Manage, lalu masukkan rule di bawah ini agar routing React (seperti /layanan-surat) tidak 404 ketika di-refresh:
+      
+      RewriteEngine On
+      RewriteBase /
+      RewriteRule ^index\.html$ - [L]
+      RewriteCond %{REQUEST_FILENAME} !-f
+      RewriteCond %{REQUEST_FILENAME} !-d
+      RewriteRule . /index.html [L]
+
+   6. Klik Save Rewrite Rules.
+
+C. Deployment Backend (Laravel):
+   1. Klik "Manage" pada subdomain API (api.desadumbayabulan.id) -> File Manager.
+   2. Masuk ke `public_html`, hapus semua file di dalamnya.
+   3. Upload `backend.zip` ke dalam folder `public_html` dan Extract.
+   4. Pindahkan semua file yang diextract ke luar (sehingga folder app, bootstrap, config, dll berada langsung di dalam `public_html`).
+   5. Edit konfigurasi Document Root website API di CyberPanel:
+      Secara default, CyberPanel mengarahkan root ke `public_html`. Untuk Laravel, kita harus mengarahkannya ke `public_html/public`.
+      Caranya:
+      - Buka menu Websites -> List Websites -> klik Manage pada website API.
+      - Pilih "vHost Conf" (Virtual Host Configuration).
+      - Cari baris: docRoot $VH_ROOT/public_html
+      - Ubah menjadi: docRoot $VH_ROOT/public_html/public
+      - Simpan vHost Conf (OpenLiteSpeed akan restart otomatis).
+   6. Buat database MySQL di CyberPanel (Databases -> Create Database).
+   7. Duplikat file `.env.example` di File Manager menjadi `.env`, buka dan sesuaikan:
+      APP_ENV=production
+      APP_DEBUG=false
+      APP_URL=https://api.desadumbayabulan.id
+      
+      DB_CONNECTION=mysql
+      DB_HOST=127.0.0.1
+      DB_PORT=3306
+      DB_DATABASE=nama_database_anda
+      DB_USERNAME=username_database_anda
+      DB_PASSWORD=password_database_anda
+
+      # Fonnte Credentials
+      FONNTE_TOKEN=token_fonnte_anda
+      FONNTE_ADMIN_PHONE=nomor_hp_admin_anda
+   8. Buka Terminal SSH ke VPS Anda, jalankan perintah di dalam folder `public_html`:
+      $ composer install --no-dev --optimize-autoloader
+      $ php artisan key:generate
+      $ php artisan migrate --seed
+      $ php artisan storage:link
+
+========================================================================
+BAGIAN 2: HOSTING DI CPANEL (APACHE / LITESPEED)
+========================================================================
+
+A. Setup Subdomain & Database:
+   1. Masuk ke cPanel -> Domains -> Subdomains. Buat subdomain `api.desadumbayabulan.id`.
+   2. Masuk ke MySQL Database Wizard untuk membuat database, user database, dan berikan semua hak akses (all privileges).
+
+B. Deployment Frontend:
+   1. Masuk ke File Manager -> folder `public_html` (Document Root domain utama).
+   2. Upload dan extract `frontend.zip`.
+   3. Buat atau edit file bernama `.htaccess` di dalam `public_html` dan tambahkan rule berikut:
+      
+      <IfModule mod_rewrite.c>
+        RewriteEngine On
+        RewriteBase /
+        RewriteRule ^index\.html$ - [L]
+        RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteCond %{REQUEST_FILENAME} !-d
+        RewriteRule . /index.html [L]
+      </IfModule>
+
+C. Deployment Backend (Laravel):
+   1. Sangat direkomendasikan untuk meletakkan file core Laravel di luar `public_html` demi keamanan.
+   2. Masuk ke File Manager -> Home directory (satu level di atas `public_html`).
+   3. Buat folder baru, misal `laravel-backend`. Upload dan extract `backend.zip` ke folder tersebut.
+   4. Pindahkan semua isi dari folder `laravel-backend/public` ke folder Document Root dari subdomain API Anda (misal `public_html/api` atau folder subdomain terkait).
+   5. Di dalam folder subdomain API tersebut, edit file `index.php`:
+      - Cari baris:
+        require __DIR__.'/../vendor/autoload.php';
+        $app = require_once __DIR__.'/../bootstrap/app.php';
+      - Ubah path-nya agar mengarah ke folder `laravel-backend` di luar public:
+        require __DIR__.'/../../laravel-backend/vendor/autoload.php';
+        $app = require_once __DIR__.'/../../laravel-backend/bootstrap/app.php';
+   6. Di folder `laravel-backend`, ubah konfigurasi `.env` (isi detail database MySQL Anda dan kredensial Fonnte).
+   7. Buka menu cPanel -> Terminal (atau via SSH) dan jalankan:
+      $ cd ~/laravel-backend
+      $ composer install --no-dev --optimize-autoloader
+      $ php artisan key:generate
+      $ php artisan migrate --seed
+      $ php artisan storage:link
+   8. Hubungkan folder storage link dengan membuat symlink manual via Terminal jika folder public di luar struktur default:
+      $ ln -s ~/laravel-backend/storage/app/public ~/public_html/api/storage
+
+========================================================================
+BAGIAN 3: HOSTING DI HESTIACP (NGINX / MULTI-PF)
+========================================================================
+
+A. Setup Web Domain & SSL:
+   1. Masuk ke HestiaCP -> Web -> Add Web Domain.
+   2. Tambahkan domain utama (desadumbayabulan.id). Aktifkan SSL Let's Encrypt.
+   3. Tambahkan subdomain (api.desadumbayabulan.id). Aktifkan SSL Let's Encrypt.
+
+B. Deployment Frontend:
+   1. Di bawah menu Web, klik ikon File Manager (atau login FTP/SSH).
+   2. Masuk ke `/home/username/web/desadumbayabulan.id/public_html`.
+   3. Upload dan extract `frontend.zip`.
+   4. Jika HestiaCP berjalan di atas Nginx murni (tanpa Apache), routing React membutuhkan konfigurasi blok server Nginx.
+      Di HestiaCP, Anda bisa mengedit template Nginx atau mengubah config secara langsung di server via SSH pada file:
+      `/etc/nginx/conf.d/domains/desadumbayabulan.id.conf`
+      Di dalam blok `location /`, tambahkan rule try_files:
+      
+      location / {
+          try_files $uri $uri/ /index.html;
+      }
+      
+      Setelah diubah, reload nginx:
+      # systemctl reload nginx
+
+C. Deployment Backend (Laravel):
+   1. Masuk ke `/home/username/web/api.desadumbayabulan.id/public_html`.
+   2. Hapus file index.html bawaan HestiaCP.
+   3. Upload dan extract `backend.zip` langsung di dalam folder `public_html`.
+   4. Karena Laravel membutuhkan document root mengarah ke folder `public/` (bukan public_html langsung), kita perlu mengubah Web Template di HestiaCP:
+      - Buka dashboard HestiaCP -> Web -> edit domain `api.desadumbayabulan.id`.
+      - Pada pilihan "Advanced Options", ubah "Web Template (Nginx)" menjadi template `laravel` (jika sudah tersedia di HestiaCP).
+      - Jika template laravel belum ada, Anda bisa masuk via SSH dan edit file config domain:
+        `/etc/nginx/conf.d/domains/api.desadumbayabulan.id.conf`
+        Cari baris root:
+        root /home/username/web/api.desadumbayabulan.id/public_html;
+        Ubah ke:
+        root /home/username/web/api.desadumbayabulan.id/public_html/public;
+      - Reload Nginx: `# systemctl reload nginx`
+   5. Di folder `public_html`, edit file `.env` dan masukkan detail database MySQL (buat database di HestiaCP -> DB -> Add Database) serta kredensial Fonnte.
+   6. Jalankan perintah via SSH di folder `public_html`:
+      $ composer install --no-dev --optimize-autoloader
+      $ php artisan key:generate
+      $ php artisan migrate --seed
+      $ php artisan storage:link
+   7. Pastikan hak akses folder storage dan bootstrap/cache diatur dengan benar agar web server bisa menulis log dan session:
+      $ chmod -R 775 storage bootstrap/cache
+      $ chown -R admin:www-data storage bootstrap/cache (sesuaikan dengan username Hestia Anda)
+
+========================================================================
+PEMECAHAN MASALAH UMUM (TROUBLESHOOTING)
+========================================================================
+
+1. Error 404 saat merefresh halaman selain Home di Frontend:
+   -> Ini terjadi karena server mencoba mencari folder fisik. Pastikan file `.htaccess` (Apache/cPanel/Cyberpanel) atau config `try_files` (Nginx/HestiaCP) sudah diaktifkan dengan benar.
+
+2. Pesan WhatsApp Fonnte Tidak Terkirim di Server Hosting:
+   -> Pastikan extension php-curl sudah aktif di hosting Anda.
+   -> Pastikan server hosting Anda mengizinkan koneksi keluar (outbound connection) ke `api.fonnte.com` pada port 443.
+   -> Periksa file log di `storage/logs/laravel.log` untuk melihat jika ada error detail dari API Fonnte.
