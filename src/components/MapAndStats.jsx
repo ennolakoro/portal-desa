@@ -5,6 +5,7 @@ export default function MapAndStats({ setCurrentPage }) {
   const [profilData, setProfilData] = useState(null);
   const [geoJsonData, setGeoJsonData] = useState(null);
   const [apbdesData, setApbdesData] = useState(null);
+  const [demografiData, setDemografiData] = useState(null);
 
   useEffect(() => {
     fetch('http://localhost:8000/api/v1/profil-desa')
@@ -28,6 +29,15 @@ export default function MapAndStats({ setCurrentPage }) {
       .then(json => {
         if (json && !json.message) {
           setApbdesData(json);
+        }
+      })
+      .catch(err => console.error(err));
+
+    fetch('http://localhost:8000/api/v1/infografis/demografi')
+      .then(res => res.json())
+      .then(json => {
+        if (json && json.summary) {
+          setDemografiData(json.summary);
         }
       })
       .catch(err => console.error(err));
@@ -90,23 +100,31 @@ export default function MapAndStats({ setCurrentPage }) {
           </h3>
           <div className="grid grid-cols-2 gap-4">
             <div className="bg-white/5 p-5 rounded border border-white/10">
-              <span className="block text-3xl font-extrabold text-primary-fixed mb-1">1.429</span>
+              <span className="block text-3xl font-extrabold text-primary-fixed mb-1">
+                {demografiData ? Number(demografiData.total).toLocaleString('id-ID') : '1.176'}
+              </span>
               <span className="text-xs opacity-60 uppercase tracking-widest font-bold">Jiwa</span>
             </div>
             <div className="bg-white/5 p-5 rounded border border-white/10">
-              <span className="block text-3xl font-extrabold text-primary-fixed mb-1">406</span>
+              <span className="block text-3xl font-extrabold text-primary-fixed mb-1">
+                {demografiData ? Number(demografiData.kk).toLocaleString('id-ID') : '349'}
+              </span>
               <span className="text-xs opacity-60 uppercase tracking-widest font-bold">KK</span>
             </div>
             <div className="bg-white/5 p-5 rounded border border-white/10">
               <div className="flex items-center gap-2 mb-1">
-                <span className="text-3xl font-extrabold text-white">740</span>
+                <span className="text-3xl font-extrabold text-white">
+                  {demografiData ? Number(demografiData.laki).toLocaleString('id-ID') : '592'}
+                </span>
                 <span className="material-symbols-outlined text-blue-400 text-sm">male</span>
               </div>
               <span className="text-xs opacity-60 uppercase tracking-widest font-bold">Laki-Laki</span>
             </div>
             <div className="bg-white/5 p-5 rounded border border-white/10">
               <div className="flex items-center gap-2 mb-1">
-                <span className="text-3xl font-extrabold text-white">689</span>
+                <span className="text-3xl font-extrabold text-white">
+                  {demografiData ? Number(demografiData.perempuan).toLocaleString('id-ID') : '584'}
+                </span>
                 <span className="material-symbols-outlined text-pink-400 text-sm">female</span>
               </div>
               <span className="text-xs opacity-60 uppercase tracking-widest font-bold">Perempuan</span>

@@ -16,11 +16,13 @@ import Berita from './components/Berita';
 import DetailBerita from './components/DetailBerita';
 import Galeri from './components/Galeri';
 import FotoSlider from './components/FotoSlider';
+import PermohonanSurat from './components/PermohonanSurat';
 
 import { useEffect } from 'react';
 
 const getPageFromPath = (path) => {
   if (path === '/' || path === '') return 'home';
+  if (path === '/layanan-surat') return 'layanan-surat';
   if (path === '/profil-desa') return 'profil';
   if (path === '/berita') return 'berita';
   if (path.startsWith('/infografis')) return 'infografis';
@@ -33,6 +35,7 @@ const getPageFromPath = (path) => {
 
 const getPathFromPage = (page, extra = null) => {
   if (page === 'home') return '/';
+  if (page === 'layanan-surat') return '/layanan-surat';
   if (page === 'profil') return '/profil-desa';
   if (page === 'berita') return '/berita';
   if (page === 'infografis') return extra ? `/infografis/${extra}` : '/infografis/penduduk';
@@ -120,6 +123,8 @@ export default function App() {
             <Gallery setCurrentPage={handleSetPage} />
           </main>
         </>
+      ) : currentPage === 'layanan-surat' ? (
+        <PermohonanSurat />
       ) : currentPage === 'profil' ? (
         <ProfilDesa />
       ) : (currentPage === 'infografis' || currentPage === 'idm') ? (

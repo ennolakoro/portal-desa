@@ -41,6 +41,9 @@ Route::prefix('v1')->group(function () {
     Route::get('/gallery', [App\Http\Controllers\GalleryController::class, 'index']);
     Route::get('/desa-setting', [App\Http\Controllers\DesaSettingController::class, 'index']);
     Route::get('/foto-slider', [App\Http\Controllers\FotoSliderController::class, 'index']);
+
+    // Permohonan Surat
+    Route::post('/layanan/permohonan-surat', [App\Http\Controllers\PermohonanSuratController::class, 'store']);
 });
 
 // Admin Routes
@@ -102,4 +105,9 @@ Route::prefix('v1/admin')->middleware(['auth:sanctum'])->group(function () {
     Route::post('/foto-slider', [App\Http\Controllers\Admin\FotoSliderController::class, 'store']);
     Route::post('/foto-slider/{id}', [App\Http\Controllers\Admin\FotoSliderController::class, 'update']);
     Route::delete('/foto-slider/{id}', [App\Http\Controllers\Admin\FotoSliderController::class, 'destroy']);
+
+    // Admin Permohonan Surat
+    Route::get('/permohonan-surat', [App\Http\Controllers\Admin\PermohonanSuratController::class, 'index']);
+    Route::put('/permohonan-surat/{id}/status', [App\Http\Controllers\Admin\PermohonanSuratController::class, 'updateStatus']);
+    Route::delete('/permohonan-surat/{id}', [App\Http\Controllers\Admin\PermohonanSuratController::class, 'destroy']);
 });

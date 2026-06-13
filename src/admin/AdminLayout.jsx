@@ -38,6 +38,7 @@ export default function AdminLayout({ children, setToken, activeTab, setActiveTa
   ];
 
   const bottomNavItems = [
+    { id: 'permohonan-surat', label: 'Layanan Surat', icon: 'description' },
     { id: 'kunjungan',    label: 'Kelola Kunjungan',  icon: 'door_open' },
     { id: 'berita',       label: 'Berita',             icon: 'newspaper' },
     { id: 'foto-slider',  label: 'Foto Slider',        icon: 'slideshow' },

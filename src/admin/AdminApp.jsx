@@ -16,6 +16,7 @@ import KelolaPotensiForm from './KelolaPotensiForm';
 import KelolaStuntingForm from './KelolaStuntingForm';
 import KelolaBansosForm from './KelolaBansosForm';
 import KelolaFotoSliderForm from './KelolaFotoSliderForm';
+import KelolaPermohonanSuratForm from './KelolaPermohonanSuratForm';
 
 
 const getTabFromPath = (path) => {
@@ -33,6 +34,7 @@ const getTabFromPath = (path) => {
   if (path === '/admin/stunting') return 'stunting';
   if (path === '/admin/bansos') return 'bansos';
   if (path === '/admin/foto-slider') return 'foto-slider';
+  if (path === '/admin/permohonan-surat') return 'permohonan-surat';
   return 'dashboard';
 };
 
@@ -51,6 +53,7 @@ const getPathFromTab = (tab) => {
   if (tab === 'stunting') return '/admin/stunting';
   if (tab === 'bansos') return '/admin/bansos';
   if (tab === 'foto-slider') return '/admin/foto-slider';
+  if (tab === 'permohonan-surat') return '/admin/permohonan-surat';
   return '/admin';
 };
 
@@ -130,6 +133,9 @@ export default function AdminApp() {
       )}
       {activeTab === 'foto-slider' && (
         <KelolaFotoSliderForm token={token} />
+      )}
+      {activeTab === 'permohonan-surat' && (
+        <KelolaPermohonanSuratForm token={token} />
       )}
     </AdminLayout>
   );
